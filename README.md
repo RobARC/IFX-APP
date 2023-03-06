@@ -63,6 +63,7 @@ with Visual Studio 2022 and click on https button.</p>
 
 <p>Open the folder IfxAppFront open with Visual Studio Code o your favorite editor or from any CLI.
 From the CLI write ng serve</p>
+<image src="./images/image3.png">
 <br>
 <br>
 
