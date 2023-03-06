@@ -1,0 +1,46 @@
+<div class=" container col-md-7 col-lg-8">
+    <h4 class="mb-3">Registro de Empresas</h4>
+    <form [formGroup]="checkoutForm" class="needs-validation" novalidate (ngSubmit)="onSubmit()" method="post">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre Empresa</label>
+                <input type="text" class="form-control" id="nombreEmpresa" placeholder="Escriba Nombre de Empresa"
+                    value="" required formControlName="nombre">
+                <div class="invalid-feedback">
+                    El campo Nombre Empresa es obligatorio.
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="ciudad" class="form-label">Ciudad</label>
+                <input type="text" class="form-control" id="ciudad" placeholder="Escriba el nombre de la Ciudad"
+                    required formControlName="ciudad">
+                <div class="invalid-feedback">
+                    El campo Ciudad es obligatorio.
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="codigoPostal" class="form-label">Código Posta</label>
+                <input type="textto" class="form-control" id="codigoPostal" placeholder="Escriba el código de la ciudad"
+                    required formControlName="codigoPostal">
+                <div class="invalid-feedback">
+                    El Código de la ciudad es obligatorio.
+                </div>
+            </div>
+
+
+            <div class="col-md-10 col-md-offset-2">
+                <span class="btn-personas">
+                    <button class="btn btn-primary" type="submit" [disabled]="!checkoutForm.valid">
+                        Salvar
+                    </button>
+                    &nbsp;
+                    <button class="btn btn-default" type="button" [routerLink]='["/inicio"]'>
+                        Cancelar
+                    </button>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,61 @@
+<div class=" container col-md-7 col-lg-8">
+    <h4 class="mb-3">Registro de Empleados</h4>
+    <form [formGroup]="checkoutForm" class="needs-validation" novalidate (ngSubmit)="onSubmit()" method="post">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Escriba su nombre" value="" required
+                    formControlName="nombre">
+                <div class="invalid-feedback">
+                    El campo Nombre es obligatorio.
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" placeholder="Escriba su apellido" value=""
+                    required formControlName="apellido">
+                <div class="invalid-feedback">
+                    El campo Apellido es obligatorio.
+                </div>
+            </div> 
+                <div class="col-md-6">
+                    <label for="fechaIngreso" class="form-label">Fecha Ingreso</label>
+                    <input type="datetime" class="form-control" id="fechaIngreso" placeholder="Escriba la fecha de Ingreso"
+                        required formControlName="fechaIngreso">
+                    <div class="invalid-feedback">
+                        El campo Fecha es obligatorio.
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="cargo" class="form-label">Cargo</label>
+                    <input type="texto" class="form-control" id="cargo" placeholder="Escriba el código de la ciudad"
+                        required formControlName="cargo">
+                    <div class="invalid-feedback">
+                        El Cargo es obligatorio.
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="form-select" class="form-label">Empresa</label>
+                    <select class="form-select" formControlName="empresa">
+                        <option selected>Elija una empresa</option>
+                        <option value=1>Cafe Corodba</option>
+                        <option value=2>Vanyplast</option>
+                    </select>
+                </div>
+
+                <div class="col-md-10 col-md-offset-2">
+                    <span class="btn-personas">
+                        <button class="btn btn-primary" type="submit" [disabled]="!checkoutForm.valid">
+                            Salvar
+                        </button>
+                        &nbsp;
+                        <button class="btn btn-default" type="button" [routerLink]='["/inicio"]'>
+                            Cancelar
+                        </button>
+                    </span>
+                </div>
+            </div>
+    </form>
+</div>

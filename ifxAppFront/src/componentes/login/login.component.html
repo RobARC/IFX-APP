@@ -1,0 +1,35 @@
+<div class="container">
+    <form [formGroup]="checkLoginForm"class="form-signin" method="get">
+        <fieldset>
+            <h4 class="form-signin-heading">Por favor ingrese sus datos</h4>
+            <div class="form-group"
+                [ngClass]="{'has-error': (checkLoginForm.get('email').touched || checkLoginForm.get('email').dirty) && !checkLoginForm.get('email').valid }">
+                <label for="inputUsuario" class="sr-only">Email</label>
+                <input type="text" formControlName="email" id="inputusuario" class="form-control" placeholder="email"
+                    required>
+                <span class="help-block"
+                    *ngIf="(checkLoginForm.get('email').touched || checkLoginForm.get('email').dirty) && checkLoginForm.get('email').errors">
+                    <span *ngIf="checkLoginForm.get('email').errors.required">
+                        El campo email es requerido
+                    </span>
+                </span>
+            </div>
+
+            <div class="form-group"
+                [ngClass]="{'has-error': (checkLoginForm.get('password').touched || checkLoginForm.get('password').dirty) && !checkLoginForm.get('password').valid }">
+                <label for="Inputpassword" class="sr-only">Password</label>
+                <input type="password" formControlName="password" id="Inputpassword" class="form-control"
+                    placeholder="Password" required>
+                <span class="help-block"
+                    *ngIf="(checkLoginForm.get('password').touched || checkLoginForm.get('password').dirty) && checkLoginForm.get('password').errors">
+                    <span *ngIf="checkLoginForm.get('password').errors.required">
+                        El campo password es requerido
+                    </span>
+                </span>
+                
+                <button class="btn btn-lg btn-primary btn-block" type="button" [disabled]="!checkLoginForm"
+                (click)="onSubmit()"  >Sign in</button>
+            </div>
+        </fieldset>
+    </form>
+</div>

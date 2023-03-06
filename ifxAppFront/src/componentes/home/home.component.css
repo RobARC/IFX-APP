@@ -1,0 +1,11 @@
+.btn{
+    margin: 5px;
+    align-items: flex-end;
+    justify-items: flex-end;
+    
+}
+
+table{
+    justify-content: center;
+    align-items: center;
+}

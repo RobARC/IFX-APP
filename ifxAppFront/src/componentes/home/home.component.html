@@ -1,0 +1,56 @@
+<div class="container">
+    
+    <h4>Lista de Empleados</h4> 
+    <br>
+    <p *ngIf="!(usuarios && usuarios.length)">
+        No hay empleados para mostrar
+    </p>
+    <table class="table" *ngIf="(usuarios && usuarios.length)">
+        <thead>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Cargo</th>
+                <th>Fecha</th>
+                <th>Actions</th>
+        </thead>
+        <tbody>
+           <!--Revisar porque no se llenan los datos--> 
+            <tr *ngFor="let item of usuarios">
+                <td>{{item.nombre}}</td>
+                <td>{{item.apellido}}</td>
+                <td>{{item.cargo}}</td>
+                <td>{{item.fechaIngreso}}</td>
+                <td *ngIf="rol == 'Administrador'">
+                    <button class="btn btn-warning" [routerLink]='["/empleados-edit/" + item.id]' >Editar</button>
+                    <button class="btn btn-danger" (click)="deleteData(item.id)">Borrar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>Lista de Empresas</h4> 
+    <br>
+    <p *ngIf="!(usuarios && usuarios.length)">
+        No hay empresas para mostrar
+    </p>
+    <table class="table" *ngIf="(usuarios && usuarios.length)">
+        <thead>
+                <th>Nombre</th>
+                <th>Ciudad</th>
+                <th>Codigo</th>
+                <th>Actions</th>
+               
+        </thead>
+        <tbody>
+           <!--Revisar porque no se llenan los datos--> 
+            <tr *ngFor="let item of empresas">
+                <td>{{item.nombre}}</td>
+                <td>{{item.ciudad}}</td>
+                <td>{{item.codigoPostal}}</td>
+                <td *ngIf="rol == 'Administrador'">
+                    <button class="btn btn-warning" [routerLink]='["/empresas-edit/" + item.id]' >Editar</button>
+                    <button class="btn btn-danger" (click)="deleteEmpresa(item.id)">Borrar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
