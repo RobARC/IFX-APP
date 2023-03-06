@@ -152,7 +152,7 @@ From the CLI write ng serve</p>
 <br>
 
 ## View the list again and the enterpises is gone
-<image src="./images/image20.png">
+<image src="./images/image21.png">
 <br>
 <br>
 
